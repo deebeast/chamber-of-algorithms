@@ -1,4 +1,4 @@
-package com.helloalgorithm.diningphilosophers;
+package com.diningphilosophers;
 
 class PhilosopherState {
     enum PhilosopherStates {

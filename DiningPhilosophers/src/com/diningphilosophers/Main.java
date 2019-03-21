@@ -1,8 +1,8 @@
-package com.helloalgorithm.diningphilosophers;
+package com.diningphilosophers;
 
 //Refer OS by Galvin
 
-import com.helloalgorithm.diningphilosophers.PhilosopherState.PhilosopherStates;
+import com.diningphilosophers.PhilosopherState.PhilosopherStates;
 
 import java.io.BufferedReader;
 import java.io.IOException;
