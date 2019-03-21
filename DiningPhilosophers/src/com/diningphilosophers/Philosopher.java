@@ -1,6 +1,6 @@
 package com.diningphilosophers;
 
-import com.helloalgorithm.diningphilosophers.PhilosopherState.PhilosopherStates;
+import com.diningphilosophers.PhilosopherState.PhilosopherStates;
 
 class Philosopher {
     private PhilosopherStates state;
