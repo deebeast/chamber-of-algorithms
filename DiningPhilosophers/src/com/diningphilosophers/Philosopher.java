@@ -14,12 +14,12 @@ class Philosopher {
     }
 
     Philosopher() {
-        state = PhilosopherStates.THINKING;
-        alreadyInQueue = false;
+        this.state = PhilosopherStates.THINKING;
+        this.alreadyInQueue = false;
     }
 
     boolean isAlreadyInQueue() {
-        return alreadyInQueue;
+        return this.alreadyInQueue;
     }
 
     void setAlreadyInQueue(boolean alreadyInQueue) {
@@ -27,7 +27,7 @@ class Philosopher {
     }
 
     PhilosopherStates getState() {
-        return state;
+        return this.state;
     }
 
     void setState(PhilosopherStates state) {
