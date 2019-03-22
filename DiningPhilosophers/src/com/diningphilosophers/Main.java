@@ -45,7 +45,9 @@ class Main {
             p[i].setState(EATING);
             p[i].setAlreadyInQueue(true);
             System.out.println(Philosopher.class.getSimpleName() + " " + i + " is eating");
-        } else System.out.println(Philosopher.class.getSimpleName() + " " + i + " can't eat at the moment");
+        } else {
+            System.out.println(Philosopher.class.getSimpleName() + " " + i + " can't eat at the moment");
+        }
     }
 
     public static void main(String[] args) throws IOException {
