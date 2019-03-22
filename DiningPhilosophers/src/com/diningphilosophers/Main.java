@@ -2,63 +2,76 @@ package com.diningphilosophers;
 
 //Refer OS by Galvin
 
-import com.diningphilosophers.PhilosopherState.PhilosopherStates;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import static com.diningphilosophers.Philosopher.Commands.*;
+import static com.diningphilosophers.Philosopher.PhilosopherStates.*;
+
 class Main {
-    private static Philosopher[] p = new Philosopher[5];
-    private static int max = 5;
+    private static final int numOfPhilosophers = 5;
+    private static final Philosopher[] p = new Philosopher[numOfPhilosophers];
+
 
     private static void pickup(int i) {
         if (p[i].isAlreadyInQueue()) {
-            System.out.println("p[" + i + "] Already in queue !");
+            System.out.println(Philosopher.class.getSimpleName() + " " + i + " Already in queue !");
             return;
         }
-        p[i].setState(PhilosopherStates.HUNGRY);
+        p[i].setState(HUNGRY);
         test(i);
     }
 
-    private static void putsdown(int i) {
-        if (!PhilosopherStates.EATING.equals(p[i].getState())) {
-            System.out.println("p[" + i + "] is not Eating.");
-            System.out.println("p[" + i + "] is in " + p[i].getState() + " state");
+    private static void putdown(int i) {
+        if (!EATING.equals(p[i].getState())) {
+            System.out.println(Philosopher.class.getSimpleName() + " " + i + " is not Eating.");
+            System.out.println(Philosopher.class.getSimpleName() + " " + i + " is in " + p[i].getState() + " state");
             return;
         }
-        p[i].setState(PhilosopherStates.THINKING);
+        p[i].setState(THINKING);
         p[i].setAlreadyInQueue(false);
-        System.out.println("p[" + i + "] has put down forks");
-        if (PhilosopherStates.HUNGRY.equals(p[(i + 4) % 5].getState())) test((i + 4) % 5);
-        if (PhilosopherStates.HUNGRY.equals(p[(i + 1) % 5].getState())) test((i + 1) % 5);
+        System.out.println(Philosopher.class.getSimpleName() + " " + i + " has put down forks");
+        if (HUNGRY.equals(p[(i + numOfPhilosophers - 1) % numOfPhilosophers].getState()))
+            test((i + numOfPhilosophers - 1) % numOfPhilosophers);
+        if (HUNGRY.equals(p[(i + 1) % numOfPhilosophers].getState()))
+            test((i + 1) % numOfPhilosophers);
     }
 
     private static void test(int i) {
-        if (!PhilosopherStates.EATING.equals(p[(i + 4) % 5].getState()) && PhilosopherStates.HUNGRY.equals(p[i].getState()) && !(PhilosopherStates.EATING.equals(p[(i + 1) % 5].getState()))) {
-            p[i].setState(PhilosopherStates.EATING);
+        if (!EATING.equals(p[(i + numOfPhilosophers - 1) % numOfPhilosophers].getState())
+                && HUNGRY.equals(p[i].getState())
+                && !(EATING.equals(p[(i + 1) % numOfPhilosophers].getState()))) {
+            p[i].setState(EATING);
             p[i].setAlreadyInQueue(true);
-            System.out.println("p[" + i + "] is eating");
-        } else System.out.println("p[" + i + "] can't eat at the moment");
+            System.out.println(Philosopher.class.getSimpleName() + " " + i + " is eating");
+        } else System.out.println(Philosopher.class.getSimpleName() + " " + i + " can't eat at the moment");
     }
 
     public static void main(String[] args) throws IOException {
-        System.out.println("-------------------------");
-        System.out.println("The program has started..");
-        System.out.println("-------------------------");
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        for (int i = 0; i < 5; i++) p[i] = new Philosopher();
+        for (int i = 0; i < numOfPhilosophers; i++) p[i] = new Philosopher();
         String command;
         String[] temp;
-        int pid;
-        while (true) {
+        int philosopherId;
+        boolean keepRunning = true;
+        while (keepRunning) {
             temp = br.readLine().trim().split(" ");
             command = temp[0];
-            pid = Integer.parseInt(temp[1]);
-            if (pid < max) {
-                if (command.equals("eat")) pickup(pid);
-                else if (command.equals("end")) putsdown(pid);
-            } else System.out.println("philosopher not present");
+            if (EXIT.name().equalsIgnoreCase(command))
+                keepRunning = false;
+            else {
+                philosopherId = Integer.parseInt(temp[1]);
+                if (philosopherId < numOfPhilosophers) {
+                    if (EAT.name().equalsIgnoreCase(command)) {
+                        pickup(philosopherId);
+                    } else if (END.name().equalsIgnoreCase(command)) {
+                        putdown(philosopherId);
+                    }
+                } else {
+                    System.out.println(Philosopher.class.getSimpleName() + " " + philosopherId + " not present");
+                }
+            }
         }
     }
 }

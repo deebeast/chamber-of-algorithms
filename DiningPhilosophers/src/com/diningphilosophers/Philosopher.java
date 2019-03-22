@@ -1,10 +1,17 @@
 package com.diningphilosophers;
 
-import com.diningphilosophers.PhilosopherState.PhilosopherStates;
 
 class Philosopher {
     private PhilosopherStates state;
     private boolean alreadyInQueue;
+
+    enum PhilosopherStates {
+        EATING, HUNGRY, THINKING
+    }
+
+    enum Commands {
+        EAT, END, EXIT
+    }
 
     Philosopher() {
         state = PhilosopherStates.THINKING;
