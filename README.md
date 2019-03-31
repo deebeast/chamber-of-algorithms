@@ -1,4 +1,4 @@
-![Chamber Logo](/images/chamber.logo)
+![Chamber Logo](/images/chamber.png)
 
 # chamber-of-algorithms
 The playground where I learn algorithms.
