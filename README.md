@@ -1,4 +1,5 @@
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](url)
 
 # chamber-of-algorithms
 The playground where I learn algorithms.
