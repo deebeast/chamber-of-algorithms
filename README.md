@@ -1,4 +1,4 @@
-![GitHub Logo](/images/logo.png)
+![Chamber Logo](/images/chamber.png)
 Format: ![Alt Text](url)
 
 # chamber-of-algorithms
