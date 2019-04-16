@@ -1,15 +1,15 @@
 {
-    "workbench.colorTheme": "One Monokai",
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures": true,
-    "workbench.editor.highlightModifiedTabs": true,
-    "explorer.sortOrder": "type",
-    "editor.cursorStyle": "line",
-    "editor.cursorBlinking": "smooth",
-    "files.trimFinalNewlines": true,
-    "editor.trimAutoWhitespace": true,
-    "editor.smoothScrolling": true,
-    "files.trimTrailingWhitespace": true
-  }
+  "workbench.colorTheme": "One Monokai",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "explorer.sortOrder": "type",
+  "editor.cursorStyle": "line",
+  "editor.cursorBlinking": "smooth",
+  "files.trimFinalNewlines": true,
+  "editor.trimAutoWhitespace": true,
+  "editor.smoothScrolling": true,
+  "files.trimTrailingWhitespace": true
+}
