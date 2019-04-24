@@ -7,9 +7,12 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
+      "name": "Launch DiningPhilosophers",
       "program": "${workspaceFolder}/DiningPhilosophers/typescript/Main.ts",
-      "outFiles": ["${workspaceFolder}/**/*.js"]
+      "outFiles": [
+        "${workspaceFolder}/**/*.js"
+      ],
+      "console": "integratedTerminal"
     }
   ]
 }
