@@ -11,5 +11,18 @@
   "files.trimFinalNewlines": true,
   "editor.trimAutoWhitespace": true,
   "editor.smoothScrolling": true,
-  "files.trimTrailingWhitespace": true
+  "files.trimTrailingWhitespace": true,
+  "editor.fontSize": 15,
+  "editor.minimap.enabled": false,
+  "C_Cpp.clang_format_fallbackStyle": "LLVM",
+  "files.associations": {
+    "array": "cpp",
+    "iostream": "cpp"
+  },
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  }
 }
