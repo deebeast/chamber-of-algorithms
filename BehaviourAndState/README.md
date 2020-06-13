@@ -21,8 +21,6 @@
 
 - Collections.unmodifiableList(list) vs Lists.immutable.ofAll(items) ?
   the performance should not matter that much ;
-  https://www.geeksforgeeks.org/immutable-list-in-java/
-  https://www.baeldung.com/java-immutable-list
 
 ### Reading List
 - 97 things a java developer should know
