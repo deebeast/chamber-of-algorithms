@@ -4,3 +4,4 @@ out/
 */typescript/*.js*
 .vscode/ipch/
 */cpp/*.out
+*.jar
